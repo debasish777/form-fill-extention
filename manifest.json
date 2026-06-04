@@ -1,20 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Form Filler",
-  "version":"1.1",
-  "description":"Provides a drop down menu for different fields for your forms.",
+  "name":"Form Filler",
+  "version":"1.2",
+  "description":"Fill form fields using right-click context menu.",
   "permissions":[
     "activeTab",
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "action":{
-    "default_popup": "popup.html"
+    "default_popup":"popup.html"
+  },
+  "background":{
+    "service_worker":"background.js"
   },
   "content_scripts":[
     {
       "matches":["<all_urls>"],
-      "js":["content.js"],
-      "css":["styles.css"]
+      "js":["content.js"]
     }
   ]
 }
